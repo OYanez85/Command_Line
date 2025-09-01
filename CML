@@ -1,0 +1,551 @@
+Complete List: Command Line Prompt (CMD)
+
+Codecademy Team
+Share
+Update: Cheat Sheets BETA is here!
+
+Learn the Command Line: Navigating the File System
+Learn the Command Line: Viewing and Changing the File System
+
+Related learning
+Course
+Learn the Command Line
+Learn about the command line, starting with navigating and manipulating the file system, and ending with redirection and configuring the environment.
+
+With Certificate
+
+Beginner Friendly
+
+4 hours
+Free course
+Intro to the Command Line
+Discover the power of this simple yet essential text-based tool and increase your productivity as a developer.
+
+Beginner Friendly
+
+1 hour
+What is the command line?
+The command line is a text-based interface used to interact with our computer’s operating system. Instead of clicking through files and folders using a graphical interface like Windows Explorer or Finder on macOS, we can use typed commands to navigate, create, edit, and manage files efficiently.
+
+The command line gives users more control and flexibility, especially for developers, system administrators, and power users. Once you learn the key commands, it becomes a powerful tool for managing your system quickly and effectively.
+
+Below is a handy reference of commonly used command-line commands.
+
+Redirection commands
+Redirection is the process of sending the output or input of a command to a file or another command.
+
+1. >
+The > operator redirects a command’s output into a file, creating a new one or overwriting an existing one.
+
+Syntax:
+
+command > filename 
+Example:
+
+echo "Hello, World!" > hello.txt 
+
+Copy to clipboard
+
+This command takes the output of echo "Hello, World!" and writes it to a file called hello.txt. If hello.txt already exists, it will be overwritten with the new content.
+
+2. >>
+The >> operator appends the output of a command to an existing file.
+
+Syntax:
+
+command >> file 
+Example:
+
+echo "This is appended text." >> hello.txt 
+
+Copy to clipboard
+
+This command appends “This is appended text.” to the file hello.txt. If the file doesn’t exist, it will be created.
+
+3. <
+The < operator redirects input from a file into a command.
+
+Syntax:
+
+command < file 
+Example:
+
+sort < unsorted.txt 
+
+Copy to clipboard
+
+This command takes the contents of unsorted.txt and sorts them using the sort command, displaying the output in the terminal.
+
+4.|
+The pipe | sends the output of one command as input to another command.
+
+Syntax:
+
+command1 | command2 
+Example:
+
+cat file.txt | grep "pattern" 
+
+Copy to clipboard
+
+This command takes the output of cat file.txt and sends it to grep to search for the word “pattern” in its content.
+
+Navigation commands
+Navigation commands help move around the file system and display information about directories and files.
+
+1. cd (Change directory)
+The cd command is used to change the current working directory.
+
+Syntax:
+
+cd directory 
+Example:
+
+cd /home/user/Documents 
+
+Copy to clipboard
+
+This command changes the current working directory to /home/user/Documents.
+
+2. cd .. (Go up one directory)
+The cd .. command is used to move one directory level up.
+
+Syntax:
+
+cd .. 
+3. pwd (Print working directory)
+The pwd command prints the current working directory.
+
+Syntax:
+
+pwd 
+4. ls (List directory contents)
+The ls command lists the files and directories in the current directory.
+
+Syntax:
+
+ls
+
+Copy to clipboard
+
+This basic command can be combined with various options to display additional details or modify the output format. Here’s a table showcasing the options:
+
+Command	Description
+ls -a	Lists all files, including hidden ones (those starting with a dot).
+ls -l	Lists files and directories with detailed information (permissions, owner, size, and modification time).
+ls -t	Sorts files by modification time, with the most recently modified files first.
+File handling
+File handling commands are used to copy, move, remove, create, and manage files and directories.
+
+1. cp (Copy files)
+The cp command copies files or directories from one location to another.
+
+Syntax:
+
+cp source destination 
+Example:
+
+cp file1.txt /home/user/Documents/ 
+
+Copy to clipboard
+
+This command copies file1.txt to the /home/user/Documents/ directory.
+
+2. mv (Move files)
+The mv command moves or renames files and directories.
+
+Syntax:
+
+mv source destination 
+Example:
+
+mv file1.txt /home/user/Documents/new_file.txt 
+
+Copy to clipboard
+
+This command moves file1.txt to the /home/user/Documents/ directory and renames it to new_file.txt.
+
+3. rm (Remove files)
+The rm command is used to delete files.
+
+Syntax:
+
+rm file 
+Example:
+
+rm file1.txt 
+
+Copy to clipboard
+
+This command removes the file file1.txt from the current directory.
+
+4. rm -r (Remove directories)
+The rm -r command deletes a directory and all its contents recursively.
+
+Syntax:
+
+rm -r directory 
+Example:
+
+rm -r /home/user/Documents/old_folder 
+
+Copy to clipboard
+
+This command deletes the directory old_folder and all its contents under /home/user/Documents/.
+
+Note: Be careful with rm and rm -r. Files deleted using these commands cannot be recovered easily.
+
+5. touch (Create empty file)
+The touch command is used to create an empty file or update the timestamp of an existing file.
+
+Syntax:
+
+touch file 
+Example:
+
+touch newfile.txt 
+
+Copy to clipboard
+
+6. mkdir (Make directory)
+The mkdir command creates a new directory.
+
+Syntax:
+
+mkdir directory 
+Example:
+
+mkdir new_folder 
+
+Copy to clipboard
+
+This command creates a new directory named new_folder in the current directory.
+
+Search commands
+Search commands allow users to search for specific text patterns within files or directories.
+
+1. grep (Search for pattern)
+The grep command searches for a specified pattern in a file.
+
+Syntax:
+
+grep pattern file 
+Example:
+
+grep "error" log.txt 
+
+Copy to clipboard
+
+This command searches for the word “error” in the log.txt file and prints lines containing the word.
+
+2. grep -i (Case-insensitive search)
+The grep -i command performs a case-insensitive search.
+
+Syntax:
+
+grep -i pattern file 
+Example:
+
+grep -i "error" log.txt 
+
+Copy to clipboard
+
+This command searches for “error” in log.txt regardless of case (i.e., it will match “ERROR”, “Error”, etc.).
+
+3. grep –R (Recursive search)
+The grep -R command searches for a pattern in files recursively within directories. This is useful for searching across logs, codebases, or config directories.
+
+Syntax:
+
+grep -R pattern directory 
+Example:
+
+grep -R "error" /var/log 
+
+Copy to clipboard
+
+This command searches for the word “error” in all files within the /var/log directory and its subdirectories.
+
+4. grep –Rl (Recursive search with file names only)
+The grep –Rl command performs a recursive search and lists only the names of files that contain the pattern.
+
+Syntax:
+
+grep -Rl pattern directory 
+Example:
+
+grep -Rl "error" /var/log 
+
+Copy to clipboard
+
+This command shows only the file names in /var/log where “error” is found.
+
+Environment variables
+Environment variables store configuration data used by processes.
+
+1. env (Show environment variables)
+The env command displays the current environment variables.
+
+Syntax:
+
+env 
+2. env | grep VARIABLE (Filter environment variables)
+The env | grep VARIABLE command filters the environment variables to show only those that match a specific pattern.
+
+Syntax:
+
+env | grep VARIABLE 
+Example:
+
+env | grep PATH 
+
+Copy to clipboard
+
+This command filters and displays only the variables related to PATH.
+
+3. export (Set environment variables)
+The export command sets environment variables that other processes can access.
+
+Syntax:
+
+export VARIABLE=value 
+Example:
+
+export PATH=$PATH:/new/path 
+
+Copy to clipboard
+
+This command appends /new/path to the PATH variable, making it available to other processes.
+
+4. PATH (System path variable)
+The PATH environment variable contains directories where executable files are stored.
+
+Syntax:
+
+echo $PATH 
+Example:
+
+echo $PATH 
+
+Copy to clipboard
+
+This command displays the current PATH variable, showing where the system looks for executable files.
+
+5. HOME (Home directory)
+The HOME environment variable represents the user’s home directory.
+
+Syntax:
+
+echo $HOME 
+Editors and environment configuration
+Editing and configuring the environment are done through text editors and configuration files.
+
+1. nano (Text editor)
+nano is a basic terminal-based text editor.
+
+Syntax:
+
+nano file 
+Example:
+
+nano .bash_profile 
+
+Copy to clipboard
+
+This command opens the .bash_profile file in the nano editor for editing.
+
+2. .bash_profile (Bash configuration file)
+The .bash_profile file contains configuration settings for the Bash shell.
+
+Syntax:
+
+nano ~/.bash_profile 
+This command opens the .bash_profile in the nano editor to configure shell settings.
+
+3. alias (Create aliases)
+The alias command creates shortcuts for commands.
+
+Syntax:
+
+alias name='command' 
+Example:
+
+alias ll='ls -l' 
+
+Copy to clipboard
+
+This command creates an alias ll for the ls –l command, so it can be run easily.
+
+4. source (Apply configuration)
+The source command is used to apply the changes made to configuration files.
+
+Syntax:
+
+source file 
+Example:
+
+source ~/.bash_profile 
+
+Copy to clipboard
+
+This command reloads the .bash_profile file, applying any changes made to it.
+
+Utilities
+These commands perform text processing operations.
+
+1. uniq (Remove duplicate lines)
+The uniq command filters out duplicate lines in a file.
+
+Syntax:
+
+uniq file 
+Example:
+
+uniq file.txt 
+
+Copy to clipboard
+
+This command removes duplicate lines from file.txt and displays the unique lines.
+
+2. sort (Sort lines)
+The sort command arranges lines of text in alphabetical or numerical order.
+
+Syntax:
+
+sort file 
+Example:
+
+sort file.txt 
+
+Copy to clipboard
+
+This command sorts the lines of file.txt in alphabetical order.
+
+3. sed (Stream editor)
+The sed command is used for manipulating and transforming text.
+
+Syntax:
+
+sed 's/old/new/' file 
+Example:
+
+sed 's/hello/world/' file.txt 
+
+Copy to clipboard
+
+This command replaces the first occurrence of “hello” with “world” in file.txt.
+
+Concepts
+Standard input, output, and error streams are fundamental concepts in Unix-like systems.
+
+stdin (Standard Input): stdin is the default input stream from which data is read.
+stdout (Standard Output): stdout is the default output stream to which data is written.
+stderr (Standard Error): stderr is the default error stream for error messages.
+Wildcards
+Wildcards are used to match patterns in filenames.
+
+* (Asterisk)
+The * wildcard matches any number of characters in a file or directory name.
+
+Syntax:
+
+command * 
+Example:
+
+ls *.txt 
+
+Copy to clipboard
+
+This command lists all files with a .txt extension in the current directory.
+
+? (Question mark)
+The ? wildcard matches exactly one character in a file or directory name.
+
+Syntax:
+
+command ?.txt 
+Example:
+
+ls ?.txt 
+
+Copy to clipboard
+
+This command lists files like a.txt, b.txt, or 1.txt, but not ab.txt or abc.txt, because ? matches only one character.
+
+[] (Square brackets)
+The [] wildcard matches any one character inside the brackets.
+
+Syntax:
+
+command [abc]*.txt 
+Example:
+
+ls [abc]*.txt 
+
+Copy to clipboard
+
+This command lists files starting with a, b, or c and ending in .txt, such as apple.txt, bat.txt, or cat.txt.
+
+Conclusion
+In this article, we explored some of the essential commands and concepts in CMD, ranging from basic file manipulation to more advanced scripting techniques. Understanding these commands will help you efficiently navigate and manage the Windows command-line environment. You can enhance your workflow, troubleshoot issues, and even automate tasks with practice.
+
+If you’re eager to dive deeper into CMD, scripting, and automation, check out the Codecademy course on Learn the Command Line.
+
+Frequently asked questions
+1. How do I get a list of commands in CMD?
+You can view a list of built-in CMD commands by typing:
+
+help 
+
+Copy to clipboard
+
+This displays a summary of available commands. For detailed info about a specific command, type:
+
+help <command> 
+
+Copy to clipboard
+
+Or
+
+<command> /? 
+
+Copy to clipboard
+
+2. How many commands are in CMD?
+Depending on your Windows version, there are dozens of built-in commands in CMD, typically over 100. These include basic file operations, system tools, networking utilities, and scripting support.
+
+You can view them using:
+
+help 
+
+Copy to clipboard
+
+3. What does == mean in CMD?
+In CMD scripting (batch files), == is a comparison operator used in if statements to check if two values are equal.
+
+Example:
+
+if "%name%" == "Alexa" echo Hello, Alexa!
+
+Copy to clipboard
+
+This checks if the variable %name% equals "Alexa" and prints a message if true.
+
+4. What is the Z in CMD?
+The Z: drive letter often appears in CMD when:
+
+A network drive is mapped to Z:
+A virtual drive (e.g., boot or install media) is assigned the letter Z:
+Some custom scripts or corporate environments map tools or backup folders to Z:
+It’s not special to CMD itself — just a drive label, like C: or D:.
+
+5. What is %% in CMD?
+In CMD scripts (batch files), %% represents loop variables inside for loops.
+
+Example (inside a batch file):
+
+for %%i in (*.txt) do echo %%i 
+
+Copy to clipboard
+
+This loops through all .txt files and echoes their names.
